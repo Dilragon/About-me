@@ -1,3 +1,8 @@
+body {
+    font-family: Calibri, serif;
+    font-size: 20px;
+}
+
 .banner {
     align-items: center;
     background-color: black;
