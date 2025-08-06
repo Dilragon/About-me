@@ -2,6 +2,7 @@ body {
     font-family: Calibri, serif;
     font-size: 22px;
     padding: 0;
+    margin: 0;
 }
 
 .banner {
@@ -11,7 +12,6 @@ body {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    position: relative;
     width: 100%;
     height: 70px;
     position: fixed;
@@ -25,7 +25,6 @@ body {
     position: relative;
     width: 100%;
     height: 600px;
-    margin: 0;
     border: none;
     z-index: -1;
     background-image: radial-gradient(circle at 50% 50%, #737373, #000 100%);
