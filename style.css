@@ -8,17 +8,24 @@ body {
 .banner {
     align-items: center;
     background-color: black;
-    color: red;
+    color: #fff;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    width: 100%;
     height: 70px;
     position: fixed;
     width: 100%;
     left: 0;
     top: 0;
     margin: 0;
+}
+
+#title-logo {
+    position: relative;
+    left: 45%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: bold;
 }
 
 #back {
@@ -33,10 +40,11 @@ body {
 main {
     position: relative;
     top: -8em;
+    right: 3em;
     background-color: #fff;
     display: flex;
     justify-content: center;
-    width: 90%;
+    width: 100%;
     max-width: 1000px;
     margin: auto;
     flex-wrap: wrap;
