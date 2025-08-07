@@ -1,8 +1,8 @@
 body {
-    font-family: Calibri, serif;
-    font-size: 22px;
-    padding: 0;
-    margin: 0;
+    font-family: Calibri, serif !important;
+    font-size: 22px !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .banner {
@@ -92,7 +92,7 @@ body {
 
 #title-logo {
     position: relative;
-    left: 45%;
+    right: 50%;
     font-family: 'Times New Roman', Times, serif;
     font-size: 40px;
     font-weight: bold;
