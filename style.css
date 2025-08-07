@@ -35,6 +35,7 @@ body {
     float: left;
     overflow: hidden;
     transition: 0.5s;
+    margin-left: 20px;
 }
 
 .dropdown .dropbtn {
@@ -43,7 +44,7 @@ body {
     border: none;
     outline: none;
     color: white;
-    padding: 14px 16px;
+    padding: 0;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
@@ -53,6 +54,11 @@ body {
     transition: 0.5s;
 }
 
+.dropbtn svg {
+    fill: white;
+    width: 25px;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -60,6 +66,7 @@ body {
     min-width: 160px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
+    margin: 0;
     transition: 0.5s;
 }
 
