@@ -7,17 +7,23 @@
     <title>My page</title>
     <link href="icon.png" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <header class="banner">
-        <div id="title-logo">Forbes</div>
-        <nav>
-            <a href="/html/">HTML</a> |
-            <a href="/css/">CSS</a> |
-            <a href="/js/">JavaScript</a> |
-            <a href="/python/">Python</a>
-        </nav>
+       <div class="navbar">
+           <div class="dropdown">
+               <button class="dropbtn" id="dropbtn" onclick="myFunction()">Dropdown
+                   <i class="fa fa-caret-down"></i>
+               </button>
+               <div class="dropdown-content" id="myDropdown">
+                   <a href="#">Link 1</a>
+                   <a href="#">Link 2</a>
+                   <a href="#">Link 3</a>
+               </div>
+           </div>
+       </div>
     </header>
     <div id="back"></div>
     <main>
@@ -41,6 +47,7 @@
             </div>
         </div>
     </main>
+    <script src="script.js"></script>
 </body>
 
 </html>
