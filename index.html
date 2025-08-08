@@ -6,51 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My page</title>
     <link href="icon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="banner">
-        <div class="nav-bar">
-            <div class="dropdown">
-                <div role="button" class="dropbtn" id="dropbtn" aria-label="Open Navigation Menu" onclick="myFunction()">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                        <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/>
-                    </svg>
-                </div>
-                <div class="dropdown-content" id="myDropdown">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
-        <div id="title-logo">Forbes</div>
-    </header>
-    <div id="back"></div>
-    <main>
-        <div class="profile-content">
-            <div class="text-content">
-                <h1>Peter Thiel</h1>
-                <p>Is a prominent entrepreneur, investor, and philanthropist best known as a co-founder of PayPal and
-                    Palantir Technologies. As the first outside investor in Facebook, Thiel has played a pivotal role in
-                    shaping the modern tech landscape. He is a founding partner of Founders Fund and has backed numerous
-                    groundbreaking startups through his venture capital efforts. Beyond business, Thiel is known for his
-                    thought leadership on innovation, technology, and politics, often challenging conventional views. He
-                    is
-                    also the author of the bestselling book Zero to One, which explores startup strategies and the
-                    future of
-                    progress.
-                </p>
-            </div>
-            <div id="image-container">
-                <img src="https://imageio.forbes.com/specials-images/imageserve/5a836fff31358e4955ad6549/0x0.jpg?format=jpg&crop=556,556,x234,y7,safe&height=416&width=416&fit=bounds"
-                    alt="Peter's Thiel photo">
-            </div>
-        </div>
-    </main>
+<!-- Навбар -->
+<header class="banner px-3">
+    <button id="navbar-toggle" class="icon" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" viewBox="0 0 640 640">
+            <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/>
+        </svg>
+    </button>
 
-    <script src="script.js"></script>
+    <div id="title-logo">Forbes</div>
+
+    <nav id="navbar-menu" class="bar1">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+    </nav>
+</header>
+
+
+<!-- Фон -->
+<div id="back"></div>
+
+<!-- Контент -->
+<main class="shadow-lg p-3 bg-white rounded">
+    <div class="profile-content">
+        <div class="text-content">
+            <h1>Peter Thiel</h1>
+            <p>Is a prominent entrepreneur, investor, and philanthropist best known as a co-founder of PayPal and
+                Palantir Technologies. As the first outside investor in Facebook, Thiel has played a pivotal role in
+                shaping the modern tech landscape. He is a founding partner of Founders Fund and has backed numerous
+                groundbreaking startups through his venture capital efforts. Beyond business, Thiel is known for his
+                thought leadership on innovation, technology, and politics, often challenging conventional views. He
+                is also the author of the bestselling book Zero to One, which explores startup strategies and the
+                future of progress.
+            </p>
+        </div>
+        <div id="image-container">
+            <img src="https://imageio.forbes.com/specials-images/imageserve/5a836fff31358e4955ad6549/0x0.jpg?format=jpg&crop=556,556,x234,y7,safe&height=416&width=416&fit=bounds"
+                 alt="Peter's Thiel photo">
+        </div>
+    </div>
+</main>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
