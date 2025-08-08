@@ -9,3 +9,19 @@ toggleBtn.addEventListener('click', () => {
     const isOpen = menu.classList.toggle('show');
     iconSVG.querySelector('path').setAttribute('d', isOpen ? closePath : burgerPath);
 });
+
+let open = false;
+
+toggleBtn.addEventListener('click', () => {
+    open = !open;
+    menu.style.height = open ? '100vh' : '0';
+
+    const svg = toggleBtn.querySelectorAll('svg');
+    if (open) {
+        svg[0].classList.add('rotate-180');
+        svg[1].classList.add('opacity-0');
+    } else {
+        svg[0].classList.remove('rotate-180');
+        svg[1].classList.remove('opacity-0');
+    }
+});
