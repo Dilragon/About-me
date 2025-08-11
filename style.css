@@ -2,13 +2,103 @@ body {
     font-family: Calibri, serif;
     font-size: 22px;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease, background-image 0.3s ease;
+    background-color: #ffffff;
+    background-image: radial-gradient(circle at 50% 50%, #e80000, #7b9fd1 70%, #ffffff);
+    background-attachment: fixed;
+    color: #333333;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    background-image: radial-gradient(circle at 50% 50%, #2a2a2a, #121212 70%, #000000);
+    background-attachment: fixed;
+    color: #e0e0e0;
+}
+
+body.dark-mode main {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+body.dark-mode header {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode .btn {
+    color: #e0e0e0;
+}
+
+body.dark-mode .btn:hover {
+    background-color: #333333;
+    transform: translateY(-2px);
+}
+
+body.dark-mode .active:hover {
+    background-color: #555;
+}
+
+body.dark-mode .icon {
+    fill: #e0e0e0;
+}
+
+body.dark-mode .icon:hover {
+    background-color: #333333;
+    transform: scale(1.1);
+}
+
+body.dark-mode .active-toggle:hover {
+    background-color: #555 !important;
+}
+
+body.dark-mode #dark-mode-toggle {
+    fill: #f8d568;
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+    background-color: rgba(248, 213, 104, 0.2);
+    transform: scale(1.1) rotate(15deg);
+}
+
+body.dark-mode #dark-mode-toggle.active-toggle:hover {
+    background-color: rgba(248, 213, 104, 0.4) !important;
+    transform: scale(1.15) rotate(15deg);
+}
+
+body.dark-mode .bar1 {
+    background: #1e1e1e;
+}
+
+body.dark-mode .bar1 a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .site-footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-top: 1px solid #333;
+}
+
+body.dark-mode .footer-links a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .footer-links a:hover {
+    color: #aaa;
 }
 
 .banner {
     display: flex;
     align-items: center;
-    background-color: black;
-    color: #fff;
+    background-color: #f8f8f8;
+    color: #333;
     height: 55px;
     position: fixed;
     width: 100%;
@@ -16,23 +106,56 @@ body {
     left: 0;
     z-index: 10;
     padding: 0 1rem;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-/* Центрируем лого */
-#title-logo {
+.left-nav, .right-nav {
     display: flex;
-    justify-content: center;
-    font-size: 38px !important;
-    letter-spacing: 0;
+    align-items: center;
+    flex: 1;
+    min-width: 0; /* Ensures they can shrink if needed */
 }
+
+.left-nav {
+    justify-content: flex-start;
+}
+
+.right-nav {
+    justify-content: flex-end;
+    width: fit-content;
+}
+
+#dark-mode-toggle {
+    width: 3rem;
+}
+
+#dark-mode-toggle:hover {
+    background-color: rgba(51, 51, 51, 0.1);
+    transform: scale(1.1) rotate(-15deg);
+}
+
+/* Logo positioning styles */
 
 .icon {
-    fill: white;
+    fill: #333;
     width: 30px;
     height: 30px;
     cursor: pointer;
     background: none;
     border: none;
+    border-radius: 50%;
+    padding: 4px;
+    transition: background-color 0.3s ease, fill 0.3s ease, transform 0.2s ease;
+}
+
+.icon:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+.active-toggle:hover {
+    background-color: #999 !important;
 }
 
 .icon-svg {
@@ -43,24 +166,25 @@ body {
 .bar1 {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 20px;
     position: absolute;
     top: 3.4rem;
     left: 0;
-    background: black;
+    background: #f0f0f0;
     width: 100%;
     padding: 1rem;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     transform: translateY(-8px);
-    transition: max-height 300ms ease, opacity 300ms ease, transform 300ms ease;
+    transition: max-height 300ms ease-in-out, opacity 300ms ease-in-out, transform 300ms ease-in-out;
 }
 
 .bar1 a {
-    color: white;
+    color: #333;
     text-decoration: none;
     font-size: 18px;
+    transition: padding-left 0.3s ease, color 0.3s ease;
 }
 
 .bar1.show {
@@ -69,37 +193,87 @@ body {
     transform: translateY(0);
 }
 
+.bar1 > a:hover {
+    text-decoration-line: underline;
+    padding-left: 5px;
+}
+
+.btn {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    width: max-content;
+    height: max-content;
+    padding: 2px 8px;
+    margin: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.active {
+    background-color: gray;
+}
+
+.active:hover {
+    background-color: #999;
+}
+.bold {
+    font-weight: bold;
+}
+
+
 hr {
     color: #393939;
 }
 
-/* Лого */
-#title-logo {
+/* Logo */
+.title-logo {
     font-family: 'Times New Roman', serif;
-    font-size: 32px;
+    font-size: 38px;
     font-weight: bold;
     text-align: center;
-    flex: 1;
+    letter-spacing: 0;
+    flex: 0;
+    white-space: nowrap;
 }
 
-/* Фон */
+/* Background */
+/* Light theme background is set in the body selector at the top */
 #back {
-    height: 600px;
-    background-image: radial-gradient(circle at 50% 50%, #737373, #000 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(to right, rgba(225,235,245,0.4), rgba(245,250,255,0.6));
+    pointer-events: none;
 }
 
-/* Контент */
+body.dark-mode #back {
+    background-image: radial-gradient(circle at 30% 40%, rgba(60,60,60,0.4), rgba(30,30,30,0.1));
+}
+
+/* Content */
 main {
     max-width: 1000px;
-    margin: auto;
+    margin: 15rem auto 0;
     position: relative;
-    top: -5em;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .profile-content {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
     align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 #image-container img {
     max-width: 250px;
@@ -115,10 +289,50 @@ main {
 .text-content p {
     font-size: 1em;
     line-height: 1.4;
-    color: #333;
 }
 
-/* Мобильная версия */
+/* Footer */
+.site-footer {
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 2rem 0;
+    margin-top: auto;
+    border-top: 1px solid #e0e0e0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #666;
+}
+
+/* Mobile version */
 @media (max-width: 768px) {
     .profile-content {
         flex-direction: column;
@@ -126,5 +340,22 @@ main {
     }
     #image-container img {
         max-width: 100%;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    .footer-links {
+        justify-content: center;
+    }
+    
+    /* Ensure logo stays centered on mobile */
+    .left-nav, .right-nav {
+        flex: 0.5; /* Reduce flex to give more space to the logo */
+    }
+    
+    .title-logo {
+        font-size: 32px; /* Slightly smaller on mobile */
     }
 }

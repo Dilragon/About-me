@@ -11,33 +11,46 @@
 </head>
 
 <body>
-<!-- Навбар -->
+<!-- Navigation -->
 <header class="banner px-3">
-    <button id="navbar-toggle" class="icon rounded" aria-label="Toggle menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg block h-1 transition-all duration-300 ease-in-out" viewBox="0 0 640 640">
-            <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/>
-        </svg>
-    </button>
+    <div class="left-nav">
+        <button id="navbar-toggle" class="icon rounded" aria-label="Toggle menu" aria-expanded="false" aria-controls="navbar-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg block h-1 transition-all duration-300 ease-in-out" viewBox="0 0 640 640">
+                <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/>
+            </svg>
+        </button>
+        <a href="index.html" class="active btn rounded">About Me</a>
+        <a href="https://github.com/Dilragon" class="btn rounded">Projects</a>
+    </div>
 
-    <div id="title-logo">Forbes</div>
+    <div class="title-logo">Forbes</div>
 
-    <nav id="navbar-menu" class="bar1 bg-black transition-all duration-300 ease-in-out">
+    <div class="right-nav">
+        <a href="https://github.com/Dilragon" class="btn rounded">Link</a>
+        <button id="dark-mode-toggle" class="icon rounded" aria-label="Toggle dark mode">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" viewBox="0 0 384 512">
+                <path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/>
+            </svg>
+        </button>
+    </div>
+
+    <nav id="navbar-menu" class="bar1 transition-all duration-300 ease-in-out" aria-label="Main navigation">
         <hr>
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <a href="#" class="bold">Link 1</a>
+        <a href="#" class="bold">Link 2</a>
+        <a href="#" class="bold">Link 3</a>
     </nav>
 </header>
 
-<!-- Фон -->
+<!-- Background -->
 <div id="back"></div>
 
-<!-- Контент -->
-<main class="shadow-lg p-3 bg-white">
-    <div class="profile-content">
+<!-- Content -->
+<main class="shadow-lg p-3 bg-white rounded-lg">
+    <article class="profile-content">
         <div class="text-content">
             <h1>Peter Thiel</h1>
-            <p>Is a prominent entrepreneur, investor, and philanthropist best known as a co-founder of PayPal and
+            <p>A prominent entrepreneur, investor, and philanthropist best known as a co-founder of PayPal and
                 Palantir Technologies. As the first outside investor in Facebook, Thiel has played a pivotal role in
                 shaping the modern tech landscape. He is a founding partner of Founders Fund and has backed many
                 groundbreaking startups through his venture capital efforts. Beyond business, Thiel is known for his
@@ -46,13 +59,26 @@
                 future of progress.
             </p>
         </div>
-        <div id="image-container">
+        <figure id="image-container">
             <img src="https://imageio.forbes.com/specials-images/imageserve/5a836fff31358e4955ad6549/0x0.jpg?format=jpg&crop=556,556,x234,y7,safe&height=416&width=416&fit=bounds"
-                 alt="Peter's Thiel photo">
-        </div>
-    </div>
+                 alt="Peter Thiel portrait" loading="lazy">
+        </figure>
+    </article>
 </main>
 
-<script src="script.js"></script>
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <p>&copy; 2025 My Personal Page. All rights reserved.</p>
+        <div class="title-logo">Forbes</div>
+        <nav class="footer-links" aria-label="Footer navigation">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="script.js" defer></script>
 </body>
 </html>
