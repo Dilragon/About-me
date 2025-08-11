@@ -41,15 +41,20 @@ body {
 }
 
 .bar1 {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 5px;
     position: absolute;
-    top: 70px;
+    top: 3.4rem;
     left: 0;
     background: black;
     width: 100%;
     padding: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: max-height 300ms ease, opacity 300ms ease, transform 300ms ease;
 }
 
 .bar1 a {
@@ -59,7 +64,9 @@ body {
 }
 
 .bar1.show {
-    display: flex;
+    max-height: 80vh;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 hr {
