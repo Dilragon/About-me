@@ -13,4 +13,9 @@ toggleBtn.addEventListener('click', () => {
 // Keep ARIA state in sync for accessibility
 toggleBtn.addEventListener('click', () => {
     toggleBtn.setAttribute('aria-expanded', menu.classList.contains('show').toString());
+    if (menu.classList.contains('show')) {
+        toggleBtn.style.backgroundColor = 'gray';
+    } else {
+        toggleBtn.style.backgroundColor = 'transparent';
+    }
 });
