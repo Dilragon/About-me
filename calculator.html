@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-gray-800 p-4 rounded-lg shadow-lg w-64">
+        <div class="mb-4">
+            <span id="display" class="block w-full bg-gray-200 text-right p-2 rounded text-2xl font-bold h-12">0</span>
+        </div>
+        <div class="grid grid-cols-4 gap-2">
+            <button class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 rounded">C</button>
+            <button class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 rounded">±</button>
+            <button class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 rounded">%</button>
+            <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded">÷</button>
+            
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">7</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">8</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">9</button>
+            <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded">×</button>
+            
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">4</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">5</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">6</button>
+            <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded">-</button>
+            
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">1</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">2</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">3</button>
+            <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded">+</button>
+            
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded col-span-2">0</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">.</button>
+            <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded">=</button>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
