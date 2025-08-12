@@ -7,7 +7,7 @@ body {
     min-height: 100vh;
     transition: background-color 0.3s ease, color 0.3s ease, background-image 0.3s ease;
     background-color: #ffffff;
-    background-image: radial-gradient(circle at 50% 50%, #e80000, #7b9fd1 70%, #ffffff);
+    background-image: radial-gradient(circle at 50% 50%, rgb(78, 78, 78), rgba(103, 108, 117, 0.8) 70%, #ffffff);
     background-attachment: fixed;
     color: #333333;
 }
