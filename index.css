@@ -1,0 +1,46 @@
+/* body {
+    margin: 0;
+}
+
+header>.classOne {
+    font-size: 3rem;
+}
+
+header>.classOne:not(:first-child) {
+    margin-left: 10px;
+}
+
+header>.classOne:not(#exclusiveButton) {
+    color: white;
+}
+
+#exclusiveButton {
+    color: red;
+}
+
+a {
+    text-decoration: ;
+}
+
+div.container {
+    position: relative;
+    overflow: hidden;
+    width: 256px;
+    height: 256px;
+    background-image: url(person_image.jpg);
+    background-size: cover;
+}
+
+div.container > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(1px);
+}
+
+header {
+    padding: 10px 20px;
+    background-color: darkslategrey;
+} */

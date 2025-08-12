@@ -2,41 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="my_tailwind_css.css">
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="bg-gray-800 p-4 rounded-lg shadow-lg w-64">
-        <div class="mb-4">
-            <span id="display" class="block w-full bg-gray-200 text-right p-2 rounded text-2xl font-bold h-12">0</span>
-        </div>
-        <div class="grid grid-cols-4 gap-2">
-            <button class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 rounded">C</button>
-            <button class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 rounded">±</button>
-            <button class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 rounded">%</button>
-            <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded">÷</button>
-            
-            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">7</button>
-            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">8</button>
-            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">9</button>
-            <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded">×</button>
-            
-            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">4</button>
-            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">5</button>
-            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">6</button>
-            <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded">-</button>
-            
-            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">1</button>
-            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">2</button>
-            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">3</button>
-            <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded">+</button>
-            
-            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded col-span-2">0</button>
-            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded">.</button>
-            <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded">=</button>
-        </div>
+<body>
+    <div class="p-2">
+        <p class="w-full text-4xl px-4 py-2 bg-gray-200 rounded-sm" id="result">0</p>
+    </div>
+    <div class="p-2 mt-4">
+        <button class="bg-gray-300 hover:bg-gray-400 cursor-pointer w-16 h-16 text-lg rounded-full" onclick="pressDigit(this);">0</button>
+        <button class="bg-gray-300 hover:bg-gray-400 cursor-pointer w-16 h-16 text-lg rounded-full" onclick="pressDigit(this);">1</button>
+        <button class="bg-gray-300 hover:bg-gray-400 cursor-pointer w-16 h-16 text-lg rounded-full" onclick="pressDigit(this);">2</button>
+        <button class="bg-gray-300 hover:bg-gray-400 cursor-pointer w-16 h-16 text-lg rounded-full" onclick="pressDigit(this);">3</button>
+        <button class="bg-gray-300 hover:bg-gray-400 cursor-pointer w-16 h-16 text-lg rounded-full" onclick="pressDigit(this);">4</button>
+        <button class="bg-gray-300 hover:bg-gray-400 cursor-pointer w-16 h-16 text-lg rounded-full" onclick="pressDigit(this);">5</button>
+        <button class="bg-gray-300 hover:bg-gray-400 cursor-pointer w-16 h-16 text-lg rounded-full" onclick="pressDigit(this);">6</button>
+        <button class="bg-gray-300 hover:bg-gray-400 cursor-pointer w-16 h-16 text-lg rounded-full" onclick="pressDigit(this);">7</button>
+        <button class="bg-gray-300 hover:bg-gray-400 cursor-pointer w-16 h-16 text-lg rounded-full" onclick="pressDigit(this);">8</button>
+        <button class="bg-gray-300 hover:bg-gray-400 cursor-pointer w-16 h-16 text-lg rounded-full" onclick="pressDigit(this);">9</button>
+    </div>
+    <div class="p-2 mt-4">
+        <button class="bg-yellow-300 hover:bg-yellow-400 cursor-pointer w-16 h-16 text-lg rounded-full" onclick="pressPlus();">+</button>
+        <button class="bg-yellow-300 hover:bg-yellow-400 cursor-pointer w-16 h-16 text-lg rounded-full">-</button>
+        <button class="bg-yellow-300 hover:bg-yellow-400 cursor-pointer w-16 h-16 text-lg rounded-full">*</button>
+        <button class="bg-yellow-300 hover:bg-yellow-400 cursor-pointer w-16 h-16 text-lg rounded-full">/</button>
+    </div>
+    <div class="p-2 mt-4">
+        <button class="bg-green-300 hover:bg-green-400 cursor-pointer w-16 h-16 text-lg rounded-full" onclick="pressEqual();">=</button>
     </div>
 
-    <script src="calculator.js"></script>
+    <script>
+        var tmp = 0;
+
+        function pressDigit(element) {
+            let digit = element.innerHTML;
+            let resultP = document.getElementById('result');
+            if (resultP.innerHTML === '0') {
+                resultP.innerHTML = digit;
+            } else {
+                resultP.innerHTML = resultP.innerHTML + digit;
+            }
+        }
+
+        function pressPlus() {
+            let resultP = document.getElementById('result');
+            tmp = parseInt(resultP.innerHTML);
+            resultP.innerHTML = 0;
+        }
+
+        function pressEqual() {
+            let resultP = document.getElementById('result');
+            let tmp2 = parseInt(resultP.innerHTML);
+            let res = tmp + tmp2;
+            resultP.innerHTML = res;
+            tmp = 0;
+        }
+    </script>
 </body>
 </html>

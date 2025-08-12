@@ -26,6 +26,12 @@ body.dark-mode main {
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
+body.dark-mode article {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
 body.dark-mode header {
     background-color: #1e1e1e;
     color: #e0e0e0;
@@ -261,7 +267,7 @@ body.dark-mode #back {
 
 /* Content */
 main {
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 15rem auto 0;
     position: relative;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -271,24 +277,53 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     margin: 0 auto;
+    width: 100%;
+    max-width: 1100px;
+    height: 400px;
+}
+#image-container {
+    flex: 0 1 416px; /* allow the image column to shrink on narrower screens */
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    align-self: stretch; /* fill .profile-content height even with align-items: center */
 }
 #image-container img {
-    max-width: 250px;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0 .5rem .5rem 0;
 }
 .text-content {
-    flex: 1;
-}
-.text-content h1 {
-    font-size: 1.5em;
+    flex: 1 1 0; /* allow shrinking/growing and define base size */
+    min-width: 0; /* prevent horizontal overflow in flex layouts */
+    min-height: 0; /* allow vertical shrinking inside fixed-height container */
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden; /* avoid scrollbars; content scales/wraps instead */
+    box-sizing: border-box;
+    font-size: clamp(0.85rem, 1.2vw, 1em); /* shrink text as container gets smaller */
+    line-height: 1.35;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
 }
 .text-content p {
     font-size: 1em;
     line-height: 1.4;
+    overflow-wrap: anywhere; /* wrap long words/URLs to stay within borders */
+    word-break: break-word;
+}
+.text-content h1 {
+    font-size: clamp(1.1em, 2.5vw, 1.5em);
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 /* Footer */
@@ -333,13 +368,34 @@ main {
 }
 
 /* Mobile version */
-@media (max-width: 768px) {
+@media (max-width: 1003px) {
+    main {
+        margin: 8rem auto 0;
+    }
     .profile-content {
         flex-direction: column;
         text-align: center;
     }
+    /* Ensure text is rendered above and before the image on mobile */
+    .text-content {
+        order: 1;
+        position: relative;
+        z-index: 1;
+    }
+    #image-container {
+        order: 2;
+        flex: 0 0 auto;
+        width: 100%;
+        height: auto;
+        align-self: auto;
+    }
     #image-container img {
+        width: 100%;
+        height: auto;
         max-width: 100%;
+        max-height: 60vh; /* prevent image from overtaking the viewport height */
+        object-fit: cover;
+        display: block;
     }
     .footer-content {
         flex-direction: column;
