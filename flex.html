@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-black">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="my_tailwind_css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container" class="w-full p-16 flex flex-row flex-wrap justify-between gap-8"></div>
+</body>
+
+<script>
+    function DummyElement(width, height) {
+        return `<img width="${width}px" height="${height}px" src="https://images.uzum.uz/crokgvchug2lhico3bn0/t_product_540_high.jpg" class="inline-block object-fill"/>`;
+    }
+
+    $(document).ready(function () {
+        $('#container').append(DummyElement(100, 100));
+        $('#container').append(DummyElement(100, 200));
+        $('#container').append(DummyElement(200, 100));
+        $('#container').append(DummyElement(100, 100));
+        $('#container').append(DummyElement(100, 200));
+        $('#container').append(DummyElement(200, 100));
+        $('#container').append(DummyElement(200, 100));
+        $('#container').append(DummyElement(200, 100));
+        $('#container').append(DummyElement(200, 100));
+    });
+</script>
+
+</html>
